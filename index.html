@@ -5,24 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Dashboard</title>
+    <style>
+        @font-face {
+            font-family: 'Roboto Condensed';
+            src: url('./fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+                url('./fonts/RobotoCondensed-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            font-family: 'Roboto Condensed', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="upper-profile">
             <div>
                 <img  src="./images/search.svg" alt="search icon">
-                <input type="text">
+                <input placeholder="search" type="text">
             </div>
             <div>
                 <img src="./images/bell.svg" alt="notification bell">
-                <img src="./images/card-account-details-outline.svg" alt="profile-picture">
-                <span>Lorem, ipsum.</span>
+                <img src="./images/horse-with-slow-walking-pose.png" alt="profile-picture">
+                <span>Morgan Oakley</span>
             </div>
         </div>
         <div class="profile-id">
             <div>
-                <img class="profile-picture" src="./images/account-group.svg" alt="profile-picture">
-                <p>Hi there,<br>Morgan Oakley (@morgan)</p>
+                <img class="profile-picture" src="./images/matthew-avatar.png" alt="profile-picture">
+                <p><strong>Hi there,<br><span class="user-name">Morgan Oakley (@morgan)</span></strong></p>
             </div>
             <div class="button">
                 <ul>
@@ -39,24 +54,51 @@
     </div>
     <aside class="aside">
         <div class="logo">
-            <img src="./images/view-dashboard-outline.svg" alt="logo">
-            <span>Dashboard</span>
+            <span class="icon" id="large-icon"><svg style="height: 50px; width:50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>view-dashboard</title><path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" /></svg></span>
+            <a href=""><span class="text">Dashboard</span></a>
         </div>
         <div class="nav">
             <ul role="list">
-                <li><a href="#"> <img src="./images/home.svg" alt="" class="icon"> Home</a></li>
-                <li><a href="#"> <img src="./images/card-account-details-outline.svg" alt="" class="icon"> Profile</a></li>
-                <li><a href="#"> <img src="./images/message-reply.svg" alt="" class="icon"> Messages</a></li>
-                <li><a href="#"> <img src="./images/history.svg" alt="" class="icon"> History</a></li>
-                <li><a href="#"> <img src="./images/file-multiple.svg" alt="" class="icon"> Tasks</a></li>
-                <li><a href="#"> <img src="./images/account-group.svg" alt="" class="icon"> Communities</a></li>
+                <li>   
+                    <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"   /></svg> 
+                    </span>
+                    <a href="#"> <span class="text"></span>Home</span></a>
+                </li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>card-account-details</title><path d="M2,3H22C23.05,3 24,3.95 24,5V19C24,20.05 23.05,21 22,21H2C0.95,21 0,20.05 0,19V5C0,3.95 0.95,3 2,3M14,6V7H22V6H14M14,8V9H21.5L22,9V8H14M14,10V11H21V10H14M8,13.91C6,13.91 2,15 2,17V18H14V17C14,15 10,13.91 8,13.91M8,6A3,3 0 0,0 5,9A3,3 0 0,0 8,12A3,3 0 0,0 11,9A3,3 0 0,0 8,6Z" /></svg></span>
+                    <a href=""><span class="text">Profile</span></a>
+                </li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>message</title><path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z" /></svg></span>
+                    <a href=""><span class="text">Messages</span></a>
+                </li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>history</title><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" /></svg></span>
+                    <a href=""><span class="text"></span>History</a>
+                </li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>file-multiple</title><path d="M15,7H20.5L15,1.5V7M8,0H16L22,6V18A2,2 0 0,1 20,20H8C6.89,20 6,19.1 6,18V2A2,2 0 0,1 8,0M4,4V22H20V24H4A2,2 0 0,1 2,22V4H4Z" /></svg></span>
+                    <a href=""><span class="text"></span>Tasks</a>
+                </li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>account-group</title><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" /></svg>
+                    </span>
+                    <a style="font-size: 18px;" href=""><span  class="text"></span>Communities</a>
+                </li>
             </ul>
         </div>
         <div class="secondary-nav">
             <ul role="list">
-                <li><a href="#"> <img src="./images/cog.svg" alt="" class="icon"> Settings</a></li>
-                <li><a href="#"> <img src="./images/help-box.svg" alt="" class="icon"> Support</a></li>
-                <li><a href="#"> <img src="./images/account-lock-outline.svg" alt="" class="icon"> Privacy</a></li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cog</title><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" /></svg></span>
+                    <a href=""><span class="text">Settings</span></a></li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>help-box-multiple</title><path d="M16 20V22H4C2.9 22 2 21.1 2 20V7H4V20H16M20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M15 14H13V12H15V14M16.8 8.8C16.5 9.2 16.1 9.5 15.7 9.7C15.5 9.9 15.3 10 15.2 10.2C15 10.4 15 10.7 15 11H13C13 10.5 13.1 10.1 13.3 9.8C13.5 9.5 13.8 9.2 14.3 8.9C14.6 8.7 14.8 8.5 14.9 8.3C15.1 8.1 15.1 7.8 15.1 7.5C15.1 7.2 15 6.9 14.8 6.7C14.6 6.5 14.4 6.4 14 6.4C13.7 6.4 13.5 6.5 13.3 6.6C13.1 6.8 13 7 13 7.3H11.1C11.1 6.5 11.3 5.9 11.9 5.5C12.6 5.2 13.3 5 14.2 5C15.1 5 15.9 5.2 16.4 5.7C16.9 6.2 17.2 6.8 17.2 7.5C17.2 8 17 8.4 16.8 8.8Z" /></svg></span>
+                    <a href=""><span class="text">Support</span></a></li>
+                <li>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>account-lock</title><path d="M6 8C6 5.79 7.79 4 10 4S14 5.79 14 8 12.21 12 10 12 6 10.21 6 8M12 18.2C12 17.24 12.5 16.34 13.2 15.74V15.5C13.2 15.11 13.27 14.74 13.38 14.38C12.35 14.14 11.21 14 10 14C5.58 14 2 15.79 2 18V20H12V18.2M22 18.3V21.8C22 22.4 21.4 23 20.7 23H15.2C14.6 23 14 22.4 14 21.7V18.2C14 17.6 14.6 17 15.2 17V15.5C15.2 14.1 16.6 13 18 13C19.4 13 20.8 14.1 20.8 15.5V17C21.4 17 22 17.6 22 18.3M19.5 15.5C19.5 14.7 18.8 14.2 18 14.2C17.2 14.2 16.5 14.7 16.5 15.5V17H19.5V15.5Z" /></svg></span>
+                    <a href=""><span class="text"></span>Privacy</a></li>
             </ul>
         </div>
     </aside>
@@ -64,32 +106,60 @@
         <div>
             <h3>Super Cool Project</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, doloremque rerum cumque nihil corporis laborum!</p>
+            <div class="main-icon">
+                <img src="./images/star-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/eye-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/source-fork.svg" alt="" class="main-icon-image">
+            </div>
         </div>
         <div>
             <h3>Less Cool Project</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, doloremque rerum cumque nihil corporis laborum!</p>
+            <div class="main-icon">
+                <img src="./images/star-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/eye-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/source-fork.svg" alt="" class="main-icon-image">
+            </div>
         </div>
         <div>
             <h3>Impossible App</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, doloremque rerum cumque nihil corporis laborum!</p>
+            <div class="main-icon">
+                <img src="./images/star-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/eye-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/source-fork.svg" alt="" class="main-icon-image">
+            </div>
         </div>
         <div>
             <h3>Easy Peasy App</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, doloremque rerum cumque nihil corporis laborum!</p>
+            <div class="main-icon">
+                <img src="./images/star-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/eye-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/source-fork.svg" alt="" class="main-icon-image">
+            </div>
         </div>
         <div>
             <h3>Ad blocker</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, doloremque rerum cumque nihil corporis laborum!</p>
+            <div class="main-icon">
+                <img src="./images/star-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/eye-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/source-fork.svg" alt="" class="main-icon-image">
+            </div>
         </div>
         <div>
             <h3>Money Maker</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, doloremque rerum cumque nihil corporis laborum!</p>
+            <div class="main-icon">
+                <img src="./images/star-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/eye-plus.svg" alt="" class="main-icon-image">
+                <img src="./images/source-fork.svg" alt="" class="main-icon-image">
+            </div>
         </div>
     </main>
     <div class="right-aside">
-           
             <section class="announcements">
-                
                 <div>
                     <h3>Site Maintainance</h3>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
@@ -103,27 +173,27 @@
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </section>
-            <section class="trending">
+            <div class="trend-heading">
                 <h3>Trending</h3>
+            </div>
+            <section class="trending">
+                
                 <div>
-                    <img src="" alt="">
-                    <span></span>
-                    <p></p>
+                    <img src="./images/horse-with-slow-walking-pose.png" alt="">
+                    <p>@tegan <br> World Peace Builder</p>
                 </div>
                 <div>
-                    <img src="" alt="">
-                    <span></span>
-                    <p></p>
+                    <img src="./images/computer.png" alt="">
+                    
+                    <p>@morgan <br> Super Cool Project</p>
                 </div>
                 <div>
-                    <img src="" alt="">
-                    <span></span>
-                    <p></p>
+                    <img src="./images/woman.png" alt="">
+                    <p>@maggie <br> Life Changing App</p>
                 </div>
                 <div>
-                    <img src="" alt="">
-                    <span></span>
-                    <p></p>
+                    <img src="./images/man.png" alt="">
+                    <p>@Allan <br> No traffic Maker</p>
                 </div>
             </section>
         </div>
